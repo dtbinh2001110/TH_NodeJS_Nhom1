@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% for(let i=0;i<data.rows.length;i++) { %>
+        <tr>
+            <th scope="row">
+                <%= i+1 %>
+            </th>
+            <td>
+                <%= data.rows[i].user %>
+            </td>
+
+            <td>
+                <%= data.rows[i].fullname %>
+            </td>
+
+            <td>
+                <%= data.rows[i].address %>
+            </td>
+
+            <td>
+                <span class="setting"><i class="fa fa-eye" aria-hidden="true">mot</i></span>
+                <span class="setting"><i class="fa fa-pencil-square-0" aria-hidden="true">hai</i></span>
+                <span class="setting"><i>ba </i></span>
+                <span class="setting"><i class="fa fa-trash" aria-hidden="true">bon</i></span>
+            </td>
+        </tr>    
+    <% }%>
+</body>
+</html>

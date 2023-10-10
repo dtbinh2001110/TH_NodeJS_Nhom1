@@ -1,13 +1,16 @@
-import  express  from "express"
-const getHomePage = (req,res)=> {
-    return res.render("home", { data: { title: "Home page",page: "main"}})
+import  express  from "express";
+import db from "../models/index";
+const getHomePage = async(req,res)=> {
+    try{
+         let data = await db.List_users.findAll(); 
+         return res.render("home",
+         {
+            data: JSON.stringify(data)
+         });
+    }catch(e) {
+        console.log(e)
+    }
 }
-export default getHomePage
-// Object:{
-//     key:'',
-//     value=''
-// }
-// module.exports = {
-//     getHomePage: getHomePage,
-//     getAboutPage: getAboutPage,
-// }
+module.exports = {
+    getHomePage:getHomePage,
+} 
